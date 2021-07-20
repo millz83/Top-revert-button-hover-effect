@@ -1,0 +1,81 @@
+
+  :root {
+    --color-primary: #970fa3;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-sherif;
+    background-color: #333; 
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%); 
+    background-blend-mode: soft-light,screen;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: #ffffff;
+    overflow: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ======================================= */
+  
+  .btn {
+    position: relative;
+    background-color: transparent;
+    border: 3px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 0 10px;
+    overflow: hidden;
+    
+    transition: color 200ms;
+  }
+  
+  .btn:hover {
+    color: white;
+  }
+  
+  .btn::before {
+    content: "";
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    transition: 500ms;
+  }
+  
+  .btn-slide-top::before {
+    border-radius: 0 0 50% 50%;
+    height: 0%;
+  }
+  
+  .btn-slide-top:hover::before {
+    height: 200%;
+  }
+  
+  .btn-slide-top-revert {
+    color: white;
+  }
+  
+  .btn-slide-top-revert:hover {
+    color: var(--color-primary);
+  }
+  
+  .btn-slide-top-revert::before {
+    border-radius: 0 0 50% 50%;
+    height: 200%;
+  }
+  
+  .btn-slide-top-revert:hover::before {
+    height: 0;
+  }
+  
